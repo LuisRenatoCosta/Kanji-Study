@@ -1,0 +1,24 @@
+import random
+kanji = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "百", "千", "万", "年", "月", "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月", "一日", "二日", "三日", "四日", "五日", "六日", "七日", "八日", "九日", "十日", "十一日", "十二日", "十三日", "十四日", "十五日", "十六日", "十七日", "十八日", "十九日", "二十日", "二十一日", "二十二日", "二十三日", "二十四日", "二十五日", "二十六日", "二十七日", "二十八日", "二十九日", "三十日", "三十一日", "日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日", "日曜日", "曜日", "週", "週末"]
+hiragana = ["れい", "いち", "に", "さん", "し", "ご", "ろく", "なな", "はち", "きゅう", "じゅう", "ひゃく", "せん", "まん", "とし", "つき", "いちがつ", "にがつ", "さんがつ", "しがつ", "ごがつ", "ろくがつ", "しちがつ", "はちがつ", "くがつ", "じゅうがつ", "じゅういちがつ", "じゅうにがつ", "ついたち", "ふつか", "むっか", "よっか", "いつか", "むいか", "なのか", "ようか", "ここのか", "とうか", "じゅういちにち", "じゅうににち", "じゅうさんにち", "じゅうよっか", "じゅうごがつ", "じゅうろくにち", "じゅうしちにち", "じゅうはちにち", "じゅうくにち", "はつか", "にじゅういちにち", "にじゅうににち", "にじゅうさんにち", "にじゅうよっか", "にじゅうごにち", "にじゅうろくにち", "にじゅうしちにち", "にじゅうはちにち", "にじゅうくにち", "さんじゅうにち", "さんじゅういちにち", "ひ", "げつようび", "かようび", "すいようび", "もくようび", "きんようび", "どようび", "にちようび", "ようび", "しゅう", "しゅうまつ"]
+significado = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "100", "1000", "10000", "Year", "Month", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8", "Day 9", "Day 10", "Day 11", "Day 12", "Day 13", "Day 14", "Day 15", "Day 16", "Day 17", "Day 18", "Day 19", "Day 20", "Day 21", "Day 22", "Day 23", "Day 24", "Day 25", "Day 26", "Day 27", "Day 28", "Day 29", "Day 30", "Day 31", "Day", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Week day", "Week", "Weekend day"]
+usuario_hiragana = "1"
+
+if (len(kanji) != len(hiragana) or len(kanji) != len(significado)):
+  print("ERROR! Menos valores em uma das listas...")
+  usuario_hiragana = "sair"
+while (usuario_hiragana != "sair"):
+  if(usuario_hiragana == "sair"):
+    break
+  else:
+    print("Kanji: ", end= "")
+    numero = random.randint(0, len(kanji)-1)
+    print("{}".format(kanji[numero]))
+    usuario_hiragana = input("Hiragana: ")
+    if(usuario_hiragana == "sair"):
+      break
+    if (usuario_hiragana.strip().upper() == hiragana[numero].strip().upper()):
+      print("Significado: {}".format(significado[numero]))
+    else:
+      print("Hiragana errado...　O Hiragana certo é {}".format(hiragana[numero]))
+      print("Siginificado: {}".format(significado[numero]))
